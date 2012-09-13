@@ -1,7 +1,6 @@
 package main
 
 import (
-    "fmt"
     "net"
     "log"
 )
@@ -18,7 +17,7 @@ func main() {
     }
     go func(c net.Conn) {
         // serve connection
-        c.Write("dsf\n")
+        c.Write([]byte("dsf\n"))
         c.Close()
     }(conn)
 }
